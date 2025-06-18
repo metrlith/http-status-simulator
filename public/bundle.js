@@ -27,6 +27,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   margin: 0;
   padding: 0 1rem;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
 header {
@@ -34,29 +38,42 @@ header {
   margin: 2rem 0;
 }
 
-.code-card {
+#app {
   background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  margin: 1rem auto;
-  max-width: 400px;
-  padding: 1rem 1.5rem;
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
-.code-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.code-card h2 {
+h2 {
   margin-top: 0;
   color: #007acc;
 }
 
-.code-card p {
+p {
   font-size: 1rem;
   line-height: 1.4;
-}`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;EACE,8BAA8B;EAC9B,mBAAmB;EACnB,SAAS;EACT,eAAe;EACf,WAAW;AACb;;AAEA;EACE,kBAAkB;EAClB,cAAc;AAChB;;AAEA;EACE,iBAAiB;EACjB,kBAAkB;EAClB,qCAAqC;EACrC,iBAAiB;EACjB,gBAAgB;EAChB,oBAAoB;EACpB,gCAAgC;AAClC;;AAEA;EACE,sCAAsC;AACxC;;AAEA;EACE,aAAa;EACb,cAAc;AAChB;;AAEA;EACE,eAAe;EACf,gBAAgB;AAClB","sourcesContent":["body {\n  font-family: Arial, sans-serif;\n  background: #f5f5f5;\n  margin: 0;\n  padding: 0 1rem;\n  color: #333;\n}\n\nheader {\n  text-align: center;\n  margin: 2rem 0;\n}\n\n.code-card {\n  background: white;\n  border-radius: 8px;\n  box-shadow: 0 2px 6px rgba(0,0,0,0.1);\n  margin: 1rem auto;\n  max-width: 400px;\n  padding: 1rem 1.5rem;\n  transition: box-shadow 0.3s ease;\n}\n\n.code-card:hover {\n  box-shadow: 0 4px 12px rgba(0,0,0,0.2);\n}\n\n.code-card h2 {\n  margin-top: 0;\n  color: #007acc;\n}\n\n.code-card p {\n  font-size: 1rem;\n  line-height: 1.4;\n}"],"sourceRoot":""}]);
+}
+
+button {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005f99;
+}
+`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;EACE,8BAA8B;EAC9B,mBAAmB;EACnB,SAAS;EACT,eAAe;EACf,WAAW;EACX,aAAa;EACb,sBAAsB;EACtB,mBAAmB;EACnB,iBAAiB;AACnB;;AAEA;EACE,kBAAkB;EAClB,cAAc;AAChB;;AAEA;EACE,iBAAiB;EACjB,kBAAkB;EAClB,qCAAqC;EACrC,gBAAgB;EAChB,WAAW;EACX,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,aAAa;EACb,cAAc;AAChB;;AAEA;EACE,eAAe;EACf,gBAAgB;AAClB;;AAEA;EACE,yBAAyB;EACzB,YAAY;EACZ,YAAY;EACZ,kBAAkB;EAClB,oBAAoB;EACpB,iBAAiB;EACjB,eAAe;EACf,eAAe;EACf,sCAAsC;AACxC;;AAEA;EACE,yBAAyB;AAC3B","sourcesContent":["body {\n  font-family: Arial, sans-serif;\n  background: #f5f5f5;\n  margin: 0;\n  padding: 0 1rem;\n  color: #333;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  min-height: 100vh;\n}\n\nheader {\n  text-align: center;\n  margin: 2rem 0;\n}\n\n#app {\n  background: white;\n  border-radius: 8px;\n  box-shadow: 0 2px 8px rgba(0,0,0,0.1);\n  max-width: 600px;\n  width: 100%;\n  padding: 2rem;\n  box-sizing: border-box;\n}\n\nh2 {\n  margin-top: 0;\n  color: #007acc;\n}\n\np {\n  font-size: 1rem;\n  line-height: 1.4;\n}\n\nbutton {\n  background-color: #007acc;\n  color: white;\n  border: none;\n  border-radius: 5px;\n  padding: 0.5rem 1rem;\n  margin: 0.75rem 0;\n  font-size: 1rem;\n  cursor: pointer;\n  transition: background-color 0.3s ease;\n}\n\nbutton:hover {\n  background-color: #005f99;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -449,49 +466,158 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/data/httpStatusCodes.js":
-/*!*************************************!*\
-  !*** ./src/data/httpStatusCodes.js ***!
-  \*************************************/
+/***/ "./src/engine.js":
+/*!***********************!*\
+  !*** ./src/engine.js ***!
+  \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   httpStatusCodes: () => (/* binding */ httpStatusCodes)
+/* harmony export */   startGame: () => (/* binding */ startGame)
 /* harmony export */ });
-var httpStatusCodes = [{
-  code: 200,
-  message: "OK",
-  description: "The request has succeeded."
+/* harmony import */ var _scenarios_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scenarios.js */ "./src/scenarios.js");
+/* harmony import */ var _state_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./state.js */ "./src/state.js");
+
+
+var app = document.getElementById('app');
+function startGame() {
+  var initial = (0,_state_js__WEBPACK_IMPORTED_MODULE_1__.getCurrentScenarioId)();
+  var scenario = _scenarios_js__WEBPACK_IMPORTED_MODULE_0__.scenarios.find(function (s) {
+    return s.id === initial;
+  });
+  renderScenario(scenario);
+}
+function renderScenario(scenario) {
+  app.innerHTML = ''; // Clear UI
+
+  var title = document.createElement('h2');
+  title.textContent = scenario.title;
+  var desc = document.createElement('p');
+  desc.textContent = scenario.description;
+  app.appendChild(title);
+  app.appendChild(desc);
+  (0,_state_js__WEBPACK_IMPORTED_MODULE_1__.markScenarioSeen)(scenario.id);
+  if (scenario.ending) {
+    var endMsg = document.createElement('p');
+    endMsg.style.fontWeight = 'bold';
+    endMsg.textContent = "\uD83C\uDFC1 ".concat(scenario.ending.message);
+    app.appendChild(endMsg);
+    var restartBtn = document.createElement('button');
+    restartBtn.textContent = 'Restart';
+    restartBtn.onclick = function () {
+      (0,_state_js__WEBPACK_IMPORTED_MODULE_1__.setCurrentScenarioId)('intro'); // or whatever your starting scenario id is
+      var startScenario = _scenarios_js__WEBPACK_IMPORTED_MODULE_0__.scenarios.find(function (s) {
+        return s.id === 'intro';
+      });
+      renderScenario(startScenario);
+    };
+    app.appendChild(restartBtn);
+    return;
+  }
+  scenario.choices.forEach(function (choice) {
+    var btn = document.createElement('button');
+    btn.textContent = choice.text;
+    btn.onclick = function () {
+      (0,_state_js__WEBPACK_IMPORTED_MODULE_1__.setCurrentScenarioId)(choice.next);
+      var next = _scenarios_js__WEBPACK_IMPORTED_MODULE_0__.scenarios.find(function (s) {
+        return s.id === choice.next;
+      });
+      renderScenario(next);
+    };
+    app.appendChild(btn);
+  });
+}
+
+/***/ }),
+
+/***/ "./src/scenarios.js":
+/*!**************************!*\
+  !*** ./src/scenarios.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   scenarios: () => (/* binding */ scenarios)
+/* harmony export */ });
+var scenarios = [{
+  id: "intro",
+  title: "The Browser Awakens",
+  description: "You are a browser making your first HTTP request. What do you want to do?",
+  choices: [{
+    text: "Request index.html",
+    next: "200_ok"
+  }, {
+    text: "Request a page that doesn't exist",
+    next: "404_not_found"
+  }]
 }, {
-  code: 301,
-  message: "Moved Permanently",
-  description: "The requested resource has been assigned a new permanent URI."
+  id: "200_ok",
+  title: "Everything is Fine",
+  description: "You received a 200 OK. Everything went smoothly. What's next?",
+  choices: [{
+    text: "Post data to a server",
+    next: "201_created"
+  }, {
+    text: "Try to access a forbidden file",
+    next: "403_forbidden"
+  }]
 }, {
-  code: 400,
-  message: "Bad Request",
-  description: "The request could not be understood by the server due to malformed syntax."
+  id: "404_not_found",
+  title: "Lost in Cyberspace",
+  description: "404 Not Found. That page doesn’t exist. Try again?",
+  ending: {
+    type: "bad",
+    message: "You got lost and the server couldn’t help. Try a different path next time."
+  }
 }, {
-  code: 401,
-  message: "Unauthorized",
-  description: "The request requires user authentication."
+  id: "201_created",
+  title: "Data Created",
+  description: "201 Created. You successfully posted data!",
+  ending: {
+    type: "good",
+    message: "You completed a successful request journey!"
+  }
 }, {
-  code: 403,
-  message: "Forbidden",
-  description: "The server understood the request, but refuses to authorize it."
-}, {
-  code: 404,
-  message: "Not Found",
-  description: "The server has not found anything matching the Request-URI."
-}, {
-  code: 418,
-  message: "I'm a teapot",
-  description: "The server refuses to brew coffee because it is a teapot."
-}, {
-  code: 500,
-  message: "Internal Server Error",
-  description: "The server encountered an unexpected condition."
+  id: "403_forbidden",
+  title: "Access Denied",
+  description: "403 Forbidden. You do not have permission.",
+  ending: {
+    type: "neutral",
+    message: "You learned the hard way that permissions matter."
+  }
 }];
+
+/***/ }),
+
+/***/ "./src/state.js":
+/*!**********************!*\
+  !*** ./src/state.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getCurrentScenarioId: () => (/* binding */ getCurrentScenarioId),
+/* harmony export */   hasSeenScenario: () => (/* binding */ hasSeenScenario),
+/* harmony export */   markScenarioSeen: () => (/* binding */ markScenarioSeen),
+/* harmony export */   setCurrentScenarioId: () => (/* binding */ setCurrentScenarioId)
+/* harmony export */ });
+var currentScenarioId = 'intro';
+var seenScenarios = new Set();
+function getCurrentScenarioId() {
+  return currentScenarioId;
+}
+function setCurrentScenarioId(id) {
+  currentScenarioId = id;
+}
+function markScenarioSeen(id) {
+  seenScenarios.add(id);
+}
+function hasSeenScenario(id) {
+  return seenScenarios.has(id);
+}
 
 /***/ }),
 
@@ -628,23 +754,10 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
-/* harmony import */ var _data_httpStatusCodes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data/httpStatusCodes.js */ "./src/data/httpStatusCodes.js");
+/* harmony import */ var _engine_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./engine.js */ "./src/engine.js");
 
 
-var app = document.getElementById('app');
-function createCodeCard(codeObj) {
-  var card = document.createElement('div');
-  card.className = 'code-card';
-  card.innerHTML = "\n    <h2>".concat(codeObj.code, " - ").concat(codeObj.message, "</h2>\n    <p>").concat(codeObj.description, "</p>\n  ");
-  return card;
-}
-function render() {
-  _data_httpStatusCodes_js__WEBPACK_IMPORTED_MODULE_1__.httpStatusCodes.forEach(function (code) {
-    var card = createCodeCard(code);
-    app.appendChild(card);
-  });
-}
-render();
+document.addEventListener('DOMContentLoaded', _engine_js__WEBPACK_IMPORTED_MODULE_1__.startGame);
 })();
 
 /******/ })()

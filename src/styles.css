@@ -4,6 +4,10 @@ body {
   margin: 0;
   padding: 0 1rem;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
 header {
@@ -11,26 +15,38 @@ header {
   margin: 2rem 0;
 }
 
-.code-card {
+#app {
   background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  margin: 1rem auto;
-  max-width: 400px;
-  padding: 1rem 1.5rem;
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
-.code-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.code-card h2 {
+h2 {
   margin-top: 0;
   color: #007acc;
 }
 
-.code-card p {
+p {
   font-size: 1rem;
   line-height: 1.4;
+}
+
+button {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005f99;
 }
